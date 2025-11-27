@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.microchip.xc8</ToolchainName>
+    <ProjectGuid>2285C48D-296E-43FD-A7B6-69885F64CFFD</ProjectGuid>
+    <avrdevice>ATmega324P</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>FIRMWARE</AssemblyName>
+    <Name>FIRMWARE</Name>
+    <RootNamespace>FIRMWARE</RootNamespace>
+    <ToolchainFlavour>XC8_2.36</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.52.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <com.microchip.xc8>
+        <com.microchip.xc8.common.optimization.RelaxBranches>True</com.microchip.xc8.common.optimization.RelaxBranches>
+        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <com.microchip.xc8.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>(%24DeviceMacro)</Value>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </com.microchip.xc8.compiler.symbols.DefSymbols>
+        <com.microchip.xc8.compiler.optimization.level>Optimize for size (-Os)</com.microchip.xc8.compiler.optimization.level>
+        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+        <com.microchip.xc8.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </com.microchip.xc8.linker.libraries.Libraries>
+      </com.microchip.xc8>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <com.microchip.xc8>
+  <com.microchip.xc8.common.outputfiles.hex>True</com.microchip.xc8.common.outputfiles.hex>
+  <com.microchip.xc8.common.outputfiles.eep>True</com.microchip.xc8.common.outputfiles.eep>
+  <com.microchip.xc8.common.outputfiles.usersignatures>False</com.microchip.xc8.common.outputfiles.usersignatures>
+  <com.microchip.xc8.common.outputfiles.lss>True</com.microchip.xc8.common.outputfiles.lss>
+  <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <com.microchip.xc8.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>(%24DeviceMacro)</Value>
+      <Value>DEBUG</Value>
+    </ListValues>
+  </com.microchip.xc8.compiler.symbols.DefSymbols>
+  <com.microchip.xc8.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../BSP</Value>
+      <Value>../COM_MAC</Value>
+      <Value>../MW</Value>
+      <Value>../TEST</Value>
+      <Value>../DRIVER/components</Value>
+      <Value>../DRIVER/devices</Value>
+      <Value>../APP</Value>
+    </ListValues>
+  </com.microchip.xc8.compiler.directories.IncludePaths>
+  <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
+  <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+  <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+  <com.microchip.xc8.compiler.optimization.DebugLevel>Default (-g2)</com.microchip.xc8.compiler.optimization.DebugLevel>
+  <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+  <com.microchip.xc8.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </com.microchip.xc8.linker.libraries.Libraries>
+  <com.microchip.xc8.assembler.debugging.DebugLevel>Default (-Wa,-g)</com.microchip.xc8.assembler.debugging.DebugLevel>
+</com.microchip.xc8>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="APP\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_eeprom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_eeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_interrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\bsp_uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="COM_MAC\common_macros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="COM_MAC\std_types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\eeprom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\eeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\gpio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\interrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\components\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\devices\bme.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\devices\bme.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\devices\mq.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DRIVER\devices\mq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MW\alarm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MW\alarm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MW\print_uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MW\print_uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_bme.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_bme.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_interrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_mq.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_mq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\test_uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="APP" />
+    <Folder Include="BSP" />
+    <Folder Include="COM_MAC" />
+    <Folder Include="DRIVER" />
+    <Folder Include="DRIVER\components" />
+    <Folder Include="DRIVER\devices" />
+    <Folder Include="MW" />
+    <Folder Include="TEST" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
